@@ -144,7 +144,98 @@ unique = []
 for i in range(len(movies)):
     count = 0
     unique = movies[i]
-    for j in range(i+1,len(movies)):
+    for j in range(i + 1, len(movies)):
         if movies[i] == movies[j]:
             print(movies[i], "is duplicate")
             count = count + 1
+
+
+# function
+# multiply
+
+# def mutiply(a, b):
+#     return a * b
+#
+#
+# print(mutiply(5, 2))
+
+# def multiplier(x):   #x=2
+#     def multiply(y):
+#         return x * y  #2 * 5
+#     return multiply
+#
+# double = multiplier(2)
+#
+# triple = multiplier(3)
+#
+# print(double(5))
+# print(triple(4))
+#
+# print(type(double))
+
+
+# def discount(percent):  #outer
+#     def apply_discount(price): #inner
+#         return price - (price * percent /100)
+#     return apply_discount
+#
+# festival_discount = discount(20)
+# first_ticket = discount(30)
+#
+# print(first_ticket(1000))
+# print(festival_discount(1000))
+
+# homeLoan = 50000000
+# rate = 10
+# month = 12
+#
+# def interest(percent, month):
+#     def totalInterest (amount):
+#          return (amount * month * percent) / 100
+#     return totalInterest
+#
+# total = interest(rate, month)
+#
+# print(total(homeLoan))
+
+#closure function
+# def interest(interest_rate): #10
+#     def calculate_amount(amount):
+#         months = 6
+#         annual_interest = interest_rate / 100
+#         monthly_interest = annual_interest/12
+#
+#         interest_amount = amount * monthly_interest * months
+#         total_amount = amount + interest_amount
+#         return total_amount
+#     return calculate_amount
+#
+#
+# home_loan = interest(10)
+# print(home_loan(5000000))
+
+# callback function
+def greet(name):
+    print("Hello" , name)
+
+def process_user(callback):
+    callback("Ketki")
+
+process_user(greet)
+#####################
+
+
+def success():
+    print("Payment Successful")
+
+def failure():
+    print("Payment Failed")
+
+def payment(status, success_cb, failure_cb):
+    if status:
+        success_cb()
+    else:
+        failure_cb()
+
+
+payment(False, success, failure)
