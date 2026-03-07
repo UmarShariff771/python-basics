@@ -1,107 +1,58 @@
-# class Student:
-#     def __init__(self, name, age):
-#         self.name = name
-#         self.age = age
-#     def introduce(self):
-#         print(f"My name is {self.name} and I am {self.age} years old")
-#
-# s1 = Student("Ketki",25)
-# s2 = Student("Rahul", 19)
-#
-# s1.introduce()
-# s2.introduce()
-
-# class Mobile:
-#     def __init__(self, brand, price):
-#         self.brand = brand
-#         self.price = price
-#
-#     def showDetails(self):
-#         print(f"The phone: {self.brand} has a price of {self.price}")
-#
-# mob1 = Mobile("Samsung", "45000")
-# mob2 = Mobile("Apple", "95000")
-#
-# mob1.showDetails()
-# mob2.showDetails()
+from abc import ABC, abstractmethod
+from pydoc import pager
 
 
-# Static Method
-# @staticmethod
-# from operator import add
+#
+# class Vehicle(ABC):
+#     @abstractmethod
+#     def start(self):
+#         pass
+#
+# class Car(Vehicle):
+#     def start(self):
+#         print("Car starts with key")
+#
+# c = Car()
+# c.start()
 #
 #
-# class MathUtils:
-#     @staticmethod
-#     def add(a, b):
-#         return a + b
+# class Bike(Vehicle):
+#     pass
+# b= Bike()
+# class Payment(ABC):
+#     @abstractmethod
+#     def pay(self, amount):
+#         pass
+# class CreditCard(Payment):
+#     def pay(self, amount):
+#         print(f"Paid {amount} using credit card")
+# class Upi(Payment):
+#     def pay(self, amount):
+#         print(f"Paid {amount} using Upi")
 #
-# result = MathUtils.add(5,3)
-# print(result)
-
-# Class method
-# class Student:
-#     school_name = "ABC School"
-#     @classmethod
-#     def change_school(cls, new_school):
-#         cls.school_name = new_school
+# p1 = CreditCard()
+# p1.pay(100)
 #
-# s1 = Student()
-# s2 = Student()
-# print(s1.school_name)
-# print(s2.school_name)
-#
-# Student.change_school("XYZ School")
-# print(s1.school_name)
-# print(s2.school_name)
+# p2 = Upi()
+# p2.pay(100)
 
 
-# Instance method
-# class Employee:
-#     def __init__(self, name, salary):
-#         self.name = name
-#         self.salary = salary
-#     def show_salary(self):
-#         print(f"{self.name} earns {self.salary}")
-#
-# emp1 = Employee("Ketki", 5000)
-# # # emp1.show_salary()
+class MathUtils:
+    def add(self, a, b, c=0):
+        return a + b + c
 
-# instance : 1
-# Class : Bank accout
-# constructor : account holder , balance
-# instance method : deposit amount > add money
+m1 = MathUtils()
+print(m1.add(1, 2))
 
-class Bank_Account:
-    def __init__(self, accountHolder, balance):
-        self.accountHolder = accountHolder
-        self.balance = balance
-    def deposit(self, amount):
-        self.balance = self.balance + amount
 
-holder1 = Bank_Account("Raj", 1000)
-holder1.deposit(5000)
-print(f"The account holder {holder1.accountHolder} has balance of {holder1.balance}")
-holder1.deposit(-2000)
-print(f"The account holder {holder1.accountHolder} has balance of {holder1.balance}")
+class MathUtils:
+    def add(a, b, c=0):
+        return a + b + c
 
-# 2nd :
-# class variable Department Name : HR
-# change the department
-#
-# Static method: (dont create object, call them directly by class name)
-# class calclator
-#     add
-#     substract
-#     multiply
 
-class Organisation:
+m1 = MathUtils()
+print(m1.add(1, 2))
 
-    Department = "HR"
 
-    @classmethod
-    def changeDepartment(self, newDepartment):
-        self.Department = newDepartment
-        print(f"The department changed to {self.Department}")
-
-Organisation.changeDepartment("IT")
+print(1+1)
+print("1"+"1")
